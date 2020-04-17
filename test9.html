@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>페럴렉스 효과적용하기 - Jarallax 적용</title>
+
+  <style>
+
+    *{margin: 0; padding: 0; box-sizing: border-box;}
+
+    body>div{
+      width: 100%; height: 700px; padding-top: 100px;
+      text-align: center;
+    }
+    body>div:nth-child(even){background-color: #e2e2e2;}
+    body>div:nth-child(odd){color: #fff;}
+
+    h2{font-size: 50px;}
+
+    #section1{
+      height: 100vh;
+      background-image: url(images/pexels-photo1.jpeg);
+    }
+    #section1 h2{ 
+      width: 100%;
+      position: absolute; left: 0; top: 50%;
+      -webkit-transform: translateY(-50%);
+      -moz-transform: translateY(-50%);
+      -o-transform: translateY(-50%);
+      transform: translateY(-50%);
+    }
+    #section3{background-image: url(images/pexels-photo3.jpeg);}
+  
+    #section5{height: 350px;}
+    #footer{
+      height: 80px; background-color: #333; color: #fff;
+      padding-top: 0; line-height: 80px;
+    }
+    #footer p{
+      width: 100%; height: 100%;
+    }
+
+    /* jarallax CSS */
+    .jarallax {
+    position: relative;
+    z-index: 0;
+    }
+    .jarallax > .jarallax-img {
+    position: absolute;
+    object-fit: cover;
+    /* support for plugin https://github.com/bfred-it/object-fit-images */
+    font-family: 'object-fit: cover;';
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    }
+
+  </style>
+
+</head>
+<body>
+
+  <div id="section1" class="jarallax"><h2>Section1 Title</h2></div>
+  <div id="section2"><h2>Section2 Title</h2></div>
+  <div id="section3" class="jarallax"><h2>Section3 Title</h2></div>
+  <div id="section4"><h2>Section4 Title</h2></div>
+  <div id="section5" class="jarallax" data-jarallax-video="mp4: ./video/video2.mp4"><h2>Section5 Title</h2></div>
+  <div id="section6"><h2>Section6 Title</h2></div>
+  <div id="footer">Copyright 2020 &copy; ABC.com All Rights Reserved.</div>
+
+
+  <!-- jQuery Insert -->
+  <script src='http://code.jquery.com/jquery-1.9.1.min.js'></script>
+
+  <script src='js/jarallax.min.js'></script>
+  <script src='js/jarallax-video.min.js'></script>
+   
+  <script>
+    $(function(){
+     
+      //  jarallax Call
+      $('.jarallax').jarallax({
+        speed: 0.2
+      });
+     
+    });
+  </script>
+  
+</body>
+</html>
